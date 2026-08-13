@@ -1,0 +1,27 @@
+from collections import OrderedDict
+
+def main():
+    n = int(input())
+    
+    ordered_items = OrderedDict()
+    
+    for _ in range(n):
+        
+        line = input().strip()
+        item_name, _, price_str = line.rpartition(' ')
+        price = int(price_str)
+        
+        if item_name in ordered_items:
+            ordered_items[item_name] += price
+        else:
+            ordered_items[item_name] = price
+            
+    for item_name, net_price in ordered_items.items():
+        print(f"{item_name} {net_price}")
+        
+if __name__ == '__main__':
+    main()
+            
+            
+            
+            
